@@ -6,6 +6,55 @@
         <title>My First Page</title>
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <link rel="stylesheet" href="style.css">
+        <style>
+            /* Quick styling to match the image better */
+            body {
+                font-family: Arial, sans-serif;
+                max-width: 600px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+            figure img {
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            }
+            details {
+                margin: 20px 0;
+                padding: 10px;
+                background: #f5f5f5;
+                border-radius: 5px;
+            }
+            summary {
+                font-weight: bold;
+                cursor: pointer;
+            }
+            dialog {
+                border: 1px solid #ccc;
+                border-radius: 8px;
+                padding: 20px;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            }
+            dialog a {
+                display: inline-block;
+                margin-top: 15px;
+                padding: 5px 15px;
+                background: #007bff;
+                color: white;
+                text-decoration: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+            .open-dialog-btn {
+                display: inline-block;
+                margin-top: 20px;
+                padding: 10px 20px;
+                background: #28a745;
+                color: white;
+                text-decoration: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+        </style>
     </head>
     <body>
         <header>
@@ -19,36 +68,48 @@
 
            <section>
                 <figure>
-                    <img src="https://placekitten.com/200/200" alt="a random cat">
+                    <!-- Replaced with a cute cat GIF from a good GIF site -->
+                    <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="a dancing cat" width="200" height="200">
                     <figcaption>Fig 1. A random cat</figcaption>
                 </figure>
            </section>
 
            <section>
                <details>
-                   <summary>Hobbies</summary>
+                   <summary>▼ Hobbies</summary>
                    <ul>
-                    <li>Swimming</li>
-                    <li>Coding</li>
-                    <li>Music</li>
-                    <li>Memeing</li>
+                    <li>• Swimming</li>
+                    <li>• Coding</li>
+                    <li>• Music</li>
+                    <li>• Memeing</li>
                 </ul>
                </details>
             </section>
 
-            <dialog id="mydialog">
-                This is a dialog
-                <a href="javascript:mydialog.removeAttribute('open')">close</a>
+            <dialog id="mydialog" style="display: none;">
+                This is a dialog close
+                <br>
+                <a href="javascript:closeDialog()">close</a>
             </dialog>
 
-            <a href="javascript:document.querySelector('#mydialog').setAttribute('open', true)">
+            <a href="javascript:openDialog()" class="open-dialog-btn">
                 Open Dialog
             </a>
 
         </article>
+        
+        <script>
+            function openDialog() {
+                document.getElementById('mydialog').style.display = 'block';
+                document.getElementById('mydialog').setAttribute('open', true);
+            }
+            
+            function closeDialog() {
+                document.getElementById('mydialog').style.display = 'none';
+                document.getElementById('mydialog').removeAttribute('open');
+            }
+        </script>
            
     </body>
-<html>
-
-
+</html>
 
