@@ -21,31 +21,40 @@
 <article>
 
 <section>
-<p>Welcome</p>
+<h2>Welcome</h2>
 </section>
 
 <section>
-<b>bold</b> <br>
-<strong>Strong text</strong><br>
-<mark>highlighted text</mark> <br>
-<u>underlined</u> <br>
-<s>strikethrough</s>
-Text<sub>subscript</sub><br>
-Text<sup>superscript</sup>
+<figure>
+<img src="https://placekitten.com/200/200" alt="a random cat">
+<figcaption>Fig 1. A random cat</figcaption>
+</figure>
 </section>
 
 <section>
-<code>code</code><br>
-<samp>Sample output from a computer program</samp><br>
-<kbd>Keyboard input</kbd>
+
+<details>
+<summary>Hobbies</summary>
+
+<ul>
+<li>Swimming</li>
+<li>Coding</li>
+<li>Music</li>
+<li>Memeing</li>
+</ul>
+
+</details>
+
 </section>
 
-<section>
-<em>Emphasized text</em><br>
-<var>variable x</var><br>
-<cite>citation</cite><br>
-<dfn>definition</dfn>
-</section>
+<dialog id="mydialog">
+This is a dialog
+<a href="javascript:mydialog.removeAttribute('open')">close</a>
+</dialog>
+
+<a href="javascript:document.querySelector('#mydialog').setAttribute('open', true)">
+Open Dialog
+</a>
 
 </article>
 
