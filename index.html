@@ -1,115 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta name="description" content="My first website">
-        <meta name="keywords" content="INFO1601, uwi, web">
-        <title>My First Page</title>
-        <meta name="viewport" content="width=device-width,initial-scale=1">
-        <link rel="stylesheet" href="style.css">
-        <style>
-            /* Quick styling to match the image better */
-            body {
-                font-family: Arial, sans-serif;
-                max-width: 600px;
-                margin: 0 auto;
-                padding: 20px;
-            }
-            figure img {
-                border-radius: 8px;
-                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            }
-            details {
-                margin: 20px 0;
-                padding: 10px;
-                background: #f5f5f5;
-                border-radius: 5px;
-            }
-            summary {
-                font-weight: bold;
-                cursor: pointer;
-            }
-            dialog {
-                border: 1px solid #ccc;
-                border-radius: 8px;
-                padding: 20px;
-                box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            }
-            dialog a {
-                display: inline-block;
-                margin-top: 15px;
-                padding: 5px 15px;
-                background: #007bff;
-                color: white;
-                text-decoration: none;
-                border-radius: 4px;
-                cursor: pointer;
-            }
-            .open-dialog-btn {
-                display: inline-block;
-                margin-top: 20px;
-                padding: 10px 20px;
-                background: #28a745;
-                color: white;
-                text-decoration: none;
-                border-radius: 5px;
-                cursor: pointer;
-            }
-        </style>
-    </head>
-    <body>
-        <header>
-            <h1>This is my first website</h1>
-        </header>
 
-        <article>
-            <section>
-                <h2>Welcome</h2>
-            </section>
+<head>
+<meta name="description" content="My first website">
+<meta name="keywords" content="INFO1601, uwi, web">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
-           <section>
-                <figure>
-                    <!-- Replaced with a cute cat GIF from a good GIF site -->
-                    <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="a dancing cat" width="200" height="200">
-                    <figcaption>Fig 1. A random cat</figcaption>
-                </figure>
-           </section>
+<title>My First Page</title>
 
-           <section>
-               <details>
-                   <summary>▼ Hobbies</summary>
-                   <ul>
-                    <li>• Swimming</li>
-                    <li>• Coding</li>
-                    <li>• Music</li>
-                    <li>• Memeing</li>
-                </ul>
-               </details>
-            </section>
+<link rel="stylesheet" href="style.css">
 
-            <dialog id="mydialog" style="display: none;">
-                This is a dialog close
-                <br>
-                <a href="javascript:closeDialog()">close</a>
-            </dialog>
+</head>
 
-            <a href="javascript:openDialog()" class="open-dialog-btn">
-                Open Dialog
-            </a>
+<body>
 
-        </article>
-        
-        <script>
-            function openDialog() {
-                document.getElementById('mydialog').style.display = 'block';
-                document.getElementById('mydialog').setAttribute('open', true);
-            }
-            
-            function closeDialog() {
-                document.getElementById('mydialog').style.display = 'none';
-                document.getElementById('mydialog').removeAttribute('open');
-            }
-        </script>
-           
-    </body>
+<header>
+<h1>This is my first website</h1>
+</header>
+
+<article>
+
+<section>
+<h2>Welcome</h2>
+</section>
+
+<section>
+<figure>
+<img src="https://placekitten.com/200/200" alt="a random cat">
+<figcaption>Fig 1. A random cat</figcaption>
+</figure>
+</section>
+
+<section>
+
+<details>
+<summary>Hobbies</summary>
+
+<ul>
+<li>Swimming</li>
+<li>Coding</li>
+<li>Music</li>
+<li>Memeing</li>
+</ul>
+
+</details>
+
+</section>
+
+<dialog id="mydialog">
+This is a dialog
+<a href="javascript:mydialog.removeAttribute('open')">close</a>
+</dialog>
+
+<a href="javascript:document.querySelector('#mydialog').setAttribute('open', true)">
+Open Dialog
+</a>
+
+</article>
+
+</body>
+
 </html>
+
 
